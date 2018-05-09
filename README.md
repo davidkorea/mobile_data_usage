@@ -8,7 +8,7 @@ device_df = pd.read_csv('./mobile_data/user_device.csv')
 usage_df = pd.read_csv('./mobile_data/user_usage.csv')
 ```
 
-2. combine 2 colomns
+2. combine two colomns
 ```php
 # transform 2 columns to str type
 device_df['platform_version'] =  device_df['platform_version'].astype('str')
@@ -17,7 +17,7 @@ device_df['platform_version'] =  device_df['platform_version'].astype('str')
 device_df['system'] = device_df['platform'].str.cat( device_df['platform_version'], sep='_' )
 ```
 
-3. merge 2 csv / dataframe
+3. merge two csv / dataframes
 ```php
 merge_df = pd.merge(device_df, usage_df, how='inner', on='user_id')
 ```
